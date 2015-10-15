@@ -1,0 +1,382 @@
+/*******************************************************
+
+	Bowie Pixel
+
+********************************************************/
+
+body {
+  background: url("images/noise.png") #1B252D;
+  color: #ccc;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: 100%;
+  overflow: hidden;
+}
+
+article {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  font-size: 1.4em;
+}
+
+h1 {
+  font-size: 1.8em;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  color: #ff165d;
+}
+
+h2, h3, h4, h5, h6 {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+hr {
+  border: none;
+  background-color: #333333;
+  height: 1px;
+}
+
+label {
+  font-size: 1em;
+  margin: 1em 0;
+  display: block;
+}
+
+#loading {
+  display: none;
+}
+
+.parameters {
+  color: #e03;
+}
+
+/*******************************************************
+
+	Pixel portrait container and images
+
+********************************************************/
+
+#pixelCanvas {
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	opacity: 0;
+	display: none;
+}
+
+#pixelContainer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 80%;
+	height: auto;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	line-height: 0;
+	background-color: #FBF6F3;
+	border: solid 2px #FBF6F3;
+	border-radius: 2px;
+	transform-origin: center;
+}
+
+#pixelContainer img {
+	width: 3.125%;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	border: none;
+	display: inline-block;
+	/*transition: 0.1s;*/
+	cursor: pointer;
+}
+
+#pixelContainer img:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);   
+}
+
+.rowStyle {
+	line-height: 0;
+	padding: 0;
+	margin: 0;
+}
+
+
+/*******************************************************
+
+	Hashtag, Splash, About screens
+
+********************************************************/
+
+#splashScreen {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	padding: 20px;
+	background-color: rgba(66,66,66,0.3);
+	border-radius: 8px;
+	z-index: 10000;
+	box-shadow: 0 0 20px 5px rgba(0,0,0,0.4);
+	transition: 0.3s;
+
+	display: none;
+}
+
+#splashScreen p {
+	margin: 0;
+	padding: 0;
+	font-size: 1.25em;
+	font-weight: 600;
+	color: #ccc;
+}
+
+#hashTag {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(10,10,10,0.3);
+  border-radius: 8px;
+  padding: 0.5em 1em;
+  transition: 0.2s;
+  z-index: 200;
+  opacity: 0.8;
+  transition: 0.3s;
+  display: none;
+  color: rgba(208,208,208,0.5);
+  cursor: pointer;
+}
+
+#hashTag p {
+  margin: 0;
+  padding: 0;
+  font-size: 1.25em;
+  font-weight: 600;
+  font-style: italic;
+  opacity: 1;
+}
+
+#hashTag:hover {
+  opacity: 1;
+  background-color: #cc163d;
+  border-radius: 2px;
+  color: #222;
+}
+
+#aboutBowiePixel {
+  background-color: rgba(10,10,10,0.85);
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 800px;
+  width: 90%;
+  height: auto;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  /*background-color: #cc163d;*/
+  z-index: 10000;
+  /*box-shadow: 0 0 20px 5px rgba(0,0,0,0.9);*/
+  display: none;
+  overflow: hidden;
+}
+
+#aboutBowiePixel p {
+  margin: 10px 25px;
+  font-size: 1.1em;
+  color: #aaa;
+}
+
+#aboutBowiePixel h1 {
+  margin: 25px 25px 10px 25px;
+}
+
+#aboutBowiePixel h2, h3 {
+  margin: 10px 25px;
+  font-size: 1.25em;
+  font-weight: 600;
+}
+
+#aboutBowiePixel strong {
+  color: #eee;
+}
+
+#aboutBowiePixel .link {
+  color: #ff165d;
+  transition: 0.2s;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#aboutBowiePixel a:hover {
+  color: #ff165d;
+  text-decoration: underline;
+  transition: 0.2s;
+}
+
+#aboutBowiePixel .copyright {
+  margin: 10px 25px 25px 25px;
+  font-size: 0.75em !important;
+  color: #999;
+}
+
+.paginate {
+  background-color: rgba(10,10,10,0.3);
+  border: none;
+  width: 100%;
+  padding: 0.5em 1em;
+  transition: 0.2s;
+  z-index: 200;
+  opacity: 0.8;
+  transition: 0.3s;
+  display: none;
+  color: rgba(208,208,208,0.5);
+  cursor: pointer;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 1.4em;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.paginate:hover {
+  opacity: 1;
+  background-color: #cc163d;
+  color: #222;
+}
+
+@media (max-width: 640px) {
+	.section2 {
+	  display:none;
+	}
+	.paginate {
+	  display:block;
+	}
+	body {
+	  font-size: 0.7em;
+	}
+	#aboutBowiePixel {
+	  opacity: 0;
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  -webkit-transform: translate(0%, 0%);
+	  transform: translate(0%, 0%);
+	  /*background-color: #cc163d;*/
+	  z-index: 10000;
+	  /*box-shadow: 0 0 20px 5px rgba(0,0,0,0.9);*/
+	  overflow: hidden;
+	  vertical-align: center;
+	}
+
+}
+
+
+
+/*******************************************************
+
+	Stats styling
+	
+	Used for debugging
+
+********************************************************/
+
+#stats {
+  background-color: rgba(10,10,10,0.5);
+  width: 180px;
+  margin: 0;
+  padding: 0 5px;
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+  z-index: 100;
+  text-align: left;
+  height: auto;
+  color: #e03;
+  
+  display: none;
+}
+
+#stats p {
+  margin: 0;
+  padding: 5px;
+}
+
+/*******************************************************
+
+	Lightbox styling
+
+********************************************************/
+
+.lightBoxContainer {
+	z-index: 50;
+	background-color: rgba(0,0,0,0.35);
+	display:none;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+}
+
+#lightBox {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 50vh;
+	height: auto;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	padding: 20px;
+	background-color: #cc163d;
+	z-index: 10000;
+	box-shadow: 0 0 20px 5px rgba(0,0,0,0.9);
+	transition: 0.3s;
+	z-index: 100;
+}
+
+.lightBoxContainer .link {
+  color: #666;
+  transition: 0.2s;
+  text-decoration: none;
+}
+
+.lightBoxContainer a:hover {
+  color: #e03;
+  text-decoration: underline;
+  transition: 0.2s;
+}
+
+#lbImage {
+	width: 100%;
+	height: auto;
+}
+
+#lbText {
+	display: none;
+	width: 100%;
+	height: auto;
+	text-align: center;
+	color: white;
+	word-wrap: break-word;
+}
+
+#lbUsername {
+	color: #333;
+	font-weight: 600;
+}
+
+.link {
+	cursor: pointer;
+}
