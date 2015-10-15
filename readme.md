@@ -8,6 +8,7 @@ This project consists of three main parts:
 -   `retrievejson.php` (a script to only perform the API requests if it hasn't already been done that day, and cache the results to disk)
 -   `index.php` (a single-page web app to view the Instagram images)
     - `assets/bowiepixel.js` (where the magic happens — thumbnail images are loaded, processed and displayed in a pixel mosiac)
+
 ## Slightly more detail
 
 Based on Instagram Keyword (hashtag), this project performs a series of calls to the Instagram API and returns a JSON encoded array of un-paginated data, up to a hard-coded limit of 52 API calls. The pixel image size is restricted to 32x32, for a maximum of 1024 images.
