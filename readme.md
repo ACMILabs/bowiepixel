@@ -29,17 +29,18 @@ The web app `assets/bowiepixel.js` loads in a source 32x32 pixel image from `ass
 
 To reduce file-size and make the Instagram data slightly easier to iterate over, here is how the Instagram data is transformed in `jsongenerator.php`:
 ``` php
-			$dataObject["thumbnail"] = $instaArray[$i]["data"][$j]["images"]["thumbnail"]["url"];
-			$dataObject["standard_resolution"] = $instaArray[$i]["data"][$j]["images"]["standard_resolution"]["url"];
-			$dataObject["caption_text"] = $instaArray[$i]["data"][$j]["caption"]["text"];
-			$dataObject["username"] = $instaArray[$i]["data"][$j]["caption"]["from"]["username"];
-			$dataObject["link"] = $instaArray[$i]["data"][$j]["link"];
+$dataObject["thumbnail"] = $instaArray[$i]["data"][$j]["images"]["thumbnail"]["url"];
+$dataObject["standard_resolution"] = $instaArray[$i]["data"][$j]["images"]["standard_resolution"]["url"];
+$dataObject["caption_text"] = $instaArray[$i]["data"][$j]["caption"]["text"];
+$dataObject["username"] = $instaArray[$i]["data"][$j]["caption"]["from"]["username"];
+$dataObject["link"] = $instaArray[$i]["data"][$j]["link"];
 ```
 ## Dependencies
 
 -   [jQuery](https://jquery.com/) (loaded via Google CDN)
 -   [Hammer JS](http://hammerjs.github.io/) (minified version is included in this repo)
 -   PHP Curl extension
+
 ## Setup Instructions
 
 Before you get started, you will need to request your own [Instagram API Access Token](https://instagram.com/developer/authentication/). 
