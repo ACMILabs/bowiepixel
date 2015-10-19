@@ -9,4 +9,4 @@
 	
 */
 
-$instagramAccessToken = "197861148.8d7100a.6e3eb17053c24df6a712b9a7e424208c";
+$instagramAccessToken = "";
