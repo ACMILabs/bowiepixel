@@ -47,8 +47,9 @@ Before you get started, you will need to request your own [Instagram API Access 
 
 1.  Pop your Instagram API Access Token token into the variable `$instagramAccessToken` in `urldetails.php`.
 2.  In `jsongenerator.php`, set `instagramKeyword` to the hashtag or keyword you'd like to use.
-3.  In `index.php` you'll want to update the title, meta tags and `aboutBowiePixel` sections to all refer to your own project.
-4.	Add a directory `json` for the cached Instagram data to be saved.
+3.	In `retrievejson.php`, set `jsonGeneratorUrl` to the absolute URL for where the `jsongenerator.php` file is located on your server(s).
+4.  In `index.php` you'll want to update the title, meta tags and `aboutBowiePixel` sections to all refer to your own project.
+5.	Add a directory `json` for the cached Instagram data to be saved.
 
 **Beware**: before deploying to a production server, there are some things you should know:
 -   In the PHP scripts, Curl is currently set not to check peer or host. This exposes the script to MITM attacks. In a production environment, you may wish to use a CA bundle and switch over to a more secure approach.
